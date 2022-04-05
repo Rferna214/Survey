@@ -1,0 +1,25 @@
+<h1>View <%= pluralize(@respondent.count, "Respondent") %></h1>
+<table>
+	<thead>
+		<th>First Name</th>
+		<th>Last Name</th>
+		<th>Email</th>
+		<th>Actions</th>
+	</thead>
+	<tbody>
+		<% @respondent.each do |respondent| %>
+		<tr>
+			<td><%= respondent.first_name %></td>
+			<td><%= respondent.last_name %></td>
+			<td><%= respondent.email %></td>
+			<td>
+				<a href="/respondent/<%= respondent.id %>">Show</a> |
+				<a href="/respondent/<%= respondent.id %>/edit">Edit</a> |
+				<a href="/respondent/<%= respondent.id %>/delete">Delete</a>
+			</td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+<a href="/respondent/new">Create Respondent</a>
+
