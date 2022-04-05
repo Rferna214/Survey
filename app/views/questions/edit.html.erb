@@ -1,0 +1,13 @@
+<h1>Edit Question: <%= @question.question_text %></h1>
+<form action="/questions/<%= @question.id %>" method="post">
+	<div>
+		<label>Question Text:</label>
+		<input type="text" name="question[question_text]" value="<%= @question.question_text%>">
+	</div>
+	<input type="submit" value="Update">
+</form>
+<% if flash[:errors] %>
+	<% flash[:errors].each do |e| %>
+	<div><%= e %><div>
+	<%end%>
+<%end%>

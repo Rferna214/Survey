@@ -1,0 +1,13 @@
+<h1>Create Survey</h1>
+<form action="/surveys" method="post">
+	<div class="form-group">
+		<label>Survey Name:</label>
+		<input type="text" name="survey[survey_name]" class="form-control">
+	</div>
+	<input type="submit" value="Create" class="btn btn-primary">
+</form>
+<% if flash[:errors] %>
+	<% flash[:errors].each do |e| %>
+	<div class="alert alert-danger"><%= e %><div>
+	<%end%>
+<%end%>

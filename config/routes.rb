@@ -3,6 +3,18 @@ Rails.application.routes.draw do
   get "surveys" => "surveys#index"
   get "surveys/new" => "surveys#new"
   post "surveys" => "surveys#create"
+  get "surveys/:id/edit" => "surveys#edit"
+  post "surveys/:id" => "surveys#update"
+  get "surveys/:id/delete" => "surveys#delete"
+  delete "surveys/:id" => "surveys#destroy"
+
+  get "questions" => "questions#index"
+  get "questions/new" => "questions#new"
+  post "questions" => "questions#create"
+  get "questions/:id/edit" => "questions#edit"
+  post "questions/:id" => "questions#update"
+  get "questions/:id/delete" => "questions#delete"
+  delete "questions/:id" => "questions#destroy"
 
 
 end

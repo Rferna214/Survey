@@ -1,0 +1,9 @@
+<h1>Delete Question: <%= @question.question_text %></h1>
+<form action="/questions/<%= @question.id %>" method="post">
+	<input type="hidden" name="_method" value="delete">
+	<div>
+		<label>Question Text :</label>
+		<input type="text" name="question[question_text]" value="<%= @question.question_text%>" disabled>
+	</div>
+	<input type="submit" value="Delete">
+</form>
