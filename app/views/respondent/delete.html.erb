@@ -1,0 +1,17 @@
+<h1>Delete <%= @respondent.first_name %> <%= @respondent.last_name %></h1>
+<form action="/respondent/<%= @respondent.id %>" method="post">
+	<input type="hidden" name="_method" value="delete">
+	<div>
+		<label>First Name:</label>
+		<input type="text" value="<%= @respondent.first_name%>" class="form-control" disabled>
+	</div>
+	<div>
+		<label>Last Name:</label>
+		<input type="text" value="<%= @respondent.last_name%>" class="form-control" disabled>
+	</div>
+	<div>
+		<label>Email:</label>
+		<input type="text" value="<%= @respondent.email%>" class="form-control" disabled>
+	</div>
+	<input type="submit" value="Delete">
+</form>

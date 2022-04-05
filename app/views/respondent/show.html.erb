@@ -1,0 +1,16 @@
+<h1>View <%= @respondent.first_name %> <%= @respondent.last_name %></h1>
+<table>
+	<thead>
+		<th>First Name</th>
+		<th>Last Name</th>
+		<th>Email</th>
+			</thead>
+	<tbody>
+		<tr>
+			<td><%= @respondent.first_name %></td>
+			<td><%= @respondent.last_name %></td>
+			<td><%= @respondent.email %></td>
+		</tr>
+	</tbody>
+</table>
+<a href="/respondent">View Respondents</a>
