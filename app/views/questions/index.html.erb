@@ -1,6 +1,6 @@
-<h1>View <%= pluralize(@questions.count, "Question") %></h1>
+<h1><strong>View <%= pluralize(@questions.count, "Question") %></strong></h1>
 <form action="/questions" method="post">
-<table class="table table-striped">
+<table class="table table-warning table-bordered border-dark table-striped">
 	<thead>
 		<th scope="col">Question Text</th>
 		<th scope="col">Actions</th>
@@ -10,7 +10,7 @@
 		<tr>
 			<td><%= question.question_text %></td>
 			<td>
-				<a href="/questions/<%= question.id%>/edit">Edit</a>|
+				<a href="/questions/<%= question.id%>/edit">Edit</a> |
 				<a href="/questions/<%= question.id%>/delete">Delete</a>
 			</td>
 		</tr>

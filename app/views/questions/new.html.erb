@@ -1,13 +1,13 @@
-<h1>Create Question</h1>
+<h1><strong>Create Question</strong></h1>
 <form action="/questions" method="post">
 	<div class="form-group">
 		<label>Question Text:</label>
 		<input type="text" name="question[question_text]" class="form-control">
 	</div>
-	<input type="submit" value="Create" class="btn btn-primary">
+	<input type="submit" value="Create" class="btn btn-success">
 </form>
 <% if flash[:errors] %>
 	<% flash[:errors].each do |e| %>
-	<div class="alert alert-danger"><%= e %><div>
+	<div class="alert-danger"><%= e %><div>
 	<%end%>
 <%end%>

@@ -27,4 +27,6 @@ Rails.application.routes.draw do
   get "respondent/:id/delete" => "respondent#delete"
   delete "respondent/:id" => "respondent#destroy"
 
+  #get "responses" => "responses#index"
+  #post "responses" => "responses#create"
 end

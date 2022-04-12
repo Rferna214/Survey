@@ -1,5 +1,5 @@
-<h1>View <%= pluralize(@surveys.count, "Survey") %></h1>
-<table class="table table-striped">
+<h1><strong>View <%= pluralize(@surveys.count, "Survey") %></strong></h1>
+<table class="table table-warning table-bordered border-dark table-striped">
 	<thead>
 		<th scope="col">Survey Name</th>
 		<th scope="col">Actions</th>
@@ -9,13 +9,12 @@
 		<tr>
 			<td><%= survey.survey_name %></td>
 			<td>
-				<a href="/surveys/<%= survey.id%>/edit">Edit</a>|
-				<a href="/surveys/<%= survey.id%>/delete">Delete</a>|
-				<a href="/questions/">Questions</a>|
+				<a href="/surveys/<%= survey.id%>/edit">Edit</a> |
+				<a href="/surveys/<%= survey.id%>/delete">Delete</a> |
+				<a href="/questions/">Questions</a> |
 				<a href="/respondent">Respondents</a> 
 			</td>
 		</tr>
 		<% end %>
 	</tbody>
 </table>
-<a href="/surveys/new">Create Surveys</a>

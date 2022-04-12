@@ -1,4 +1,4 @@
-<h1>Delete <%= @respondent.first_name %> <%= @respondent.last_name %></h1>
+<h1><strong>Delete <%= @respondent.first_name %> <%= @respondent.last_name %></strong></h1>
 <form action="/respondent/<%= @respondent.id %>" method="post">
 	<input type="hidden" name="_method" value="delete">
 	<div>
@@ -13,5 +13,5 @@
 		<label>Email:</label>
 		<input type="text" value="<%= @respondent.email%>" class="form-control" disabled>
 	</div>
-	<input type="submit" value="Delete">
+	<input type="submit" value="Delete" class="btn btn-success">
 </form>
