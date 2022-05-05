@@ -27,9 +27,13 @@ end
 
 def update
 	respondent = Respondent.find(params[:id])
+
 	if respondent.update(respondent_params)
+
 		redirect_to "/respondent"
+
 	else
+		
 		flash[:errors] = respondent.errors.full_messages
 		redirect_to "/respondent/#{respondent.id}/edit"
 end

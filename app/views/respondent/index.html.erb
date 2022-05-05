@@ -1,5 +1,5 @@
-<h1>View <%= pluralize(@respondent.count, "Respondent") %></h1>
-<table>
+<h1><strong>View <%= pluralize(@respondent.count, "Respondent") %></strong></h1>
+<table class="table table-warning table-bordered border-dark table-striped">
 	<thead>
 		<th>First Name</th>
 		<th>Last Name</th>
@@ -21,5 +21,5 @@
 		<% end %>
 	</tbody>
 </table>
-<a href="/respondent/new">Create Respondent</a>
+
 
