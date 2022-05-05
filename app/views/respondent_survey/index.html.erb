@@ -1,0 +1,27 @@
+<h1>Create Respondent Survey</h1>
+<form action="/respondent_survey" method="post">
+	<div class="form-group">
+		<label>Survey:</label>
+		<select name="respondent_survey[survey1_id]">
+			<option></option>
+			<% @surveys.each do |survey| %>
+			<option value="<%= survey.id %>"><%= survey.survey_name %></option>
+			<% end %>
+		</select>
+	</div>
+	<div class="form-group">
+		<label>Respondent:</label>
+		<select name="respondent_survey[respondent_id]">
+			<option></option>
+			<% @respondent.each do |respondent| %>
+			<option value="<%= respondent.id %>"><%= respondent.first_name %> <%= respondent.last_name %></option>
+			<% end %>
+		</select>
+	</div>
+	<input type="submit" value="Create" class="btn btn-primary">
+</form>
+ <% if flash[:errors] %> 
+	<% flash[:errors].each do |e| %>
+	<div class="alert-danger"><%= e %></div>
+	<% end %>
+<% end %>
