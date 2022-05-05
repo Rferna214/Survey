@@ -16,6 +16,11 @@ class SurveysController < ApplicationController
 	def new
 	end
 
+	def show
+		@respondent = Survey1.find(params[:id]).respondents
+		
+	end
+
 	# create method gets called when the Create button is pushed on
 	# the surveys new.html.erb
 	def create

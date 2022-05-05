@@ -42,4 +42,9 @@ Rails.application.routes.draw do
 
   get "survey_questions/:question_id/responses" => "survey_questions#responses"
 
+  get "respondent_survey" => "respondent_survey#index"
+  post "respondent_survey" => "respondent_survey#create"
+  get "respondent_survey/:id" => "respondent_survey#show"
+
+
 end

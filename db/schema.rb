@@ -11,6 +11,8 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2022_04_26_140035) do
+
+ActiveRecord::Schema[7.0].define(version: 2022_04_21_142911) do
   create_table "gits", force: :cascade do |t|
     t.string "git_id"
     t.datetime "created_at", null: false
@@ -31,12 +33,33 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_26_140035) do
     t.string "responses"
     t.index ["question_id"], name: "index_respondent_questions_on_question_id"
     t.index ["respondent_id"], name: "index_respondent_questions_on_respondent_id"
+  create_table "respondent_survey1s", force: :cascade do |t|
+    t.integer "respondent_id", null: false
+    t.integer "survey1_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["respondent_id"], name: "index_respondent_survey1s_on_respondent_id"
+    t.index ["survey1_id"], name: "index_respondent_survey1s_on_survey1_id"
+  end
+
+  create_table "respondent_surveys", force: :cascade do |t|
+    t.integer "respondent_id", null: false
+    t.integer "survey_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["respondent_id"], name: "index_respondent_surveys_on_respondent_id"
+    t.index ["survey_id"], name: "index_respondent_surveys_on_survey_id"
   end
 
   create_table "respondents", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
     t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "respondentsurveys", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -61,4 +84,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_26_140035) do
   add_foreign_key "respondent_questions", "respondents"
   add_foreign_key "survey_questions", "questions"
   add_foreign_key "survey_questions", "survey1s"
+  add_foreign_key "respondent_survey1s", "respondents"
+  add_foreign_key "respondent_survey1s", "survey1s"
+  add_foreign_key "respondent_surveys", "respondents"
+  add_foreign_key "respondent_surveys", "surveys"
 end

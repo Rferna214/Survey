@@ -1,0 +1,18 @@
+<h1>View Respondents </h1>
+<table>
+	<thead>
+		<th>First Name</th>
+		<th>Last Name</th>
+		<th>Email</th>
+			</thead>
+	<tbody>
+		<% @respondent.each do |respondent| %>
+		<tr>
+			<td><%= respondent.first_name %></td>
+			<td><%= respondent.last_name %></td>
+			<td><%= respondent.email %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+<a href="/respondent_survey">View Respondents</a>

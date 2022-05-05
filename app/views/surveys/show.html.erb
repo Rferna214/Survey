@@ -1,3 +1,4 @@
+
 <h1><strong>View <%= @survey.survey_name %> Questions</strong></h1>
 <table class="table table-warning table-bordered border-dark table-striped">
 	<thead>
@@ -16,3 +17,17 @@
 		<% end %>
 	</tbody>
 </table>
+<h1>View <%= @surveys.survey_name %> Respondent</h1>
+<table>
+	<thead>
+		<th>Survey</th>
+			</thead>
+	<tbody>
+		<% @respondent.each do |respondent| %>
+		<tr>
+			<td><%= respondent.first_name %> <%= respondent.last_name %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+<a href="/respondent">View Respondents</a>
