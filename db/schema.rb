@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_29_144206) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_26_140035) do
   create_table "gits", force: :cascade do |t|
     t.string "git_id"
     t.datetime "created_at", null: false
@@ -21,6 +21,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_29_144206) do
     t.string "question_text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "respondent_questions", force: :cascade do |t|
+    t.integer "respondent_id", null: false
+    t.integer "question_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "responses"
+    t.index ["question_id"], name: "index_respondent_questions_on_question_id"
+    t.index ["respondent_id"], name: "index_respondent_questions_on_respondent_id"
   end
 
   create_table "respondents", force: :cascade do |t|
@@ -37,4 +47,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_29_144206) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "survey_questions", force: :cascade do |t|
+    t.integer "survey1_id", null: false
+    t.integer "question_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "responses"
+    t.index ["question_id"], name: "index_survey_questions_on_question_id"
+    t.index ["survey1_id"], name: "index_survey_questions_on_survey1_id"
+  end
+
+  add_foreign_key "respondent_questions", "questions"
+  add_foreign_key "respondent_questions", "respondents"
+  add_foreign_key "survey_questions", "questions"
+  add_foreign_key "survey_questions", "survey1s"
 end

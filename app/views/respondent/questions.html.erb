@@ -1,0 +1,14 @@
+<h1>View <%= @respondents.first_name %> <%= @respondents.last_name %> Questions</h1>
+<table>
+	<thead>
+		<th>Question</th>
+	</thead>
+	<tbody>
+		<% @questions.each do |question| %>
+		<tr>
+			<td><%= question.question_text %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+<a href="/respondent">View Respondents</a>

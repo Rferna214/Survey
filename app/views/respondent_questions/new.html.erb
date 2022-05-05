@@ -1,0 +1,13 @@
+<h1><strong>Respond!</strong></h1>
+<form action="/questions/id:" method="post">
+	<div class="form-group">
+		<label>Response:</label>
+		<input type="text" name="survey_questions[responses]" class="form-control">
+	</div>
+	<input type="submit" value="Create" class="btn btn-success">
+</form>
+<% if flash[:errors] %>
+	<% flash[:errors].each do |e| %>
+	<div class="alert-danger"><%= e %><div>
+	<%end%>
+<%end%>

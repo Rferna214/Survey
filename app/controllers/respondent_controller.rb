@@ -16,6 +16,10 @@ def create
 		redirect_to "/respondent/new"
 	end
 end
+def questions
+		@questions = Respondent.find(params[:id]).questions
+		@respondents = Respondent.find(params[:id])
+	end
 
 def show
 	@respondent = Respondent.find(params[:id])
@@ -48,6 +52,8 @@ def destroy
 	respondent.destroy
 	redirect_to "/respondent"
 end
+
+
 
 private
 def respondent_params

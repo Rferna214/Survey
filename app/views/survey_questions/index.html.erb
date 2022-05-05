@@ -1,0 +1,27 @@
+<h1><strong>Associate Surveys to Questions</strong></h1>
+<form action="/survey_questions" method="post">
+	<div>
+		<label>Survey:</label>
+		<select name="survey_questions[survey1_id]">
+			<option></option>
+			<% @surveys.each do |survey| %>
+			<option value="<%= survey.id %>"><%= survey.survey_name %></option>
+			<% end %>
+		</select>
+	</div>
+	<div>
+		<label>Question:</label>
+		<select name="survey_questions[question_id]">
+			<option></option>
+			<% @questions.each do |question| %>
+			<option value="<%= question.id %>"><%= question.question_text %></option>
+			<% end %>
+		</select>
+	</div>
+	<input type="submit" value="Create" class="btn btn-success">
+</form>
+<% if flash[:errors] %>
+	<% flash[:errors].each do |e| %>
+	<div><%= e %><div>
+	<%end%>
+<%end%>

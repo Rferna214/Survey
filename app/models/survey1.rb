@@ -1,5 +1,5 @@
 class Survey1 < ApplicationRecord
-	# validates method specifies that an actor is valid only if
-	# a survey name is present
+	has_many :survey_questions, dependent: :destroy
+	has_many :questions, through: :survey_questions
 	validates :survey_name, presence: true
 end

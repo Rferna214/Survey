@@ -1,0 +1,18 @@
+<h1><strong>View <%= @survey.survey_name %> Questions</strong></h1>
+<table class="table table-warning table-bordered border-dark table-striped">
+	<thead>
+		<th>Question</th>
+		<th scope="col">Actions</th>
+	</thead>
+	<tbody>
+		<% @questions.each do |question| %>
+		<tr>
+			<td><%= question.question_text %></td>
+			<td>
+				<a href="/survey_questions/<%= question.id%>">Respond</a> |
+				<a href="/survey_questions/<%= question.id%>/responses">Response</a>
+			</td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>

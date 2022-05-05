@@ -27,6 +27,19 @@ Rails.application.routes.draw do
   get "respondent/:id/delete" => "respondent#delete"
   delete "respondent/:id" => "respondent#destroy"
 
-  #get "responses" => "responses#index"
-  #post "responses" => "responses#create"
+  get "survey_questions" => "survey_questions#index"
+  post "survey_questions" => "survey_questions#create"
+
+  get "surveys/:id" => "surveys#show"
+
+  get "respondent_questions" => "respondent_questions#index"
+  post "respondent_questions" => "respondent_questions#create"
+
+  get "respondent/:id/questions" => "respondent#questions"
+
+  get "survey_questions/:question_id" => "survey_questions#respond"
+  post "survey_questions/:id" => "survey_questions#update"
+
+  get "survey_questions/:question_id/responses" => "survey_questions#responses"
+
 end

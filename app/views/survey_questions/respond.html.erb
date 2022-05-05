@@ -1,0 +1,15 @@
+<h1><strong>Respond!</strong></h1>
+<form action="/survey_questions/<%= @survey_question.id %>" method="post">
+	<div class="form-group">
+		<label>Response:</label>
+		<input type="text" name="survey_questions[responses]" class="form-control">
+	</div>
+	<input type="hidden" name="survey_questions[survey1_id]" value="<%= @survey_question.survey1_id %>">
+	<input type="hidden" name="survey_questions[question_id]" value="<%= @survey_question.question_id %>">
+		<input type="submit" value="Update" class="btn btn-success">
+</form>
+<% if flash[:errors] %>
+	<% flash[:errors].each do |e| %>
+	<div class="alert-danger"><%= e %><div>
+	<%end%>
+<%end%>

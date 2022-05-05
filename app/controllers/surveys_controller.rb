@@ -38,6 +38,19 @@ class SurveysController < ApplicationController
 		end
 	end
 
+	def show
+		# call find method on Actor model class giving it the id sent
+		# in the request
+		# find method selects all of the data in the actor table where
+		# the id is equal to the id sent in the request 
+		# selected data will be returned in array of movie objects
+		# store the array of movie objects in an instance variable
+		# instance variable is available to actors show.html.erb
+		@questions = Survey1.find(params[:id]).questions
+		@survey = Survey1.find(params[:id])
+		
+	end
+
 	def edit
 		# call find method on Survey1 model class giving it the id sent
 		# in the request

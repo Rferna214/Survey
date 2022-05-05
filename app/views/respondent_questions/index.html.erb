@@ -1,0 +1,27 @@
+<h1><strong>Associate Respondents to Questions</strong></h1>
+<form action="/respondent_questions" method="post">
+	<div>
+		<label>Respondent:</label>
+		<select name="respondent_question[respondent_id]">
+			<option></option>
+			<% @respondents.each do |respondent| %>
+			<option value="<%= respondent.id %>"><%= respondent.first_name %> <%= respondent.last_name %></option>
+			<% end %>
+		</select>
+	</div>
+	<div>
+		<label>Question:</label>
+		<select name="respondent_question[question_id]">
+			<option></option>
+			<% @questions.each do |question| %>
+			<option value="<%= question.id %>"><%= question.question_text %></option>
+			<% end %>
+		</select>
+	</div>
+	<input type="submit" value="Create" class="btn btn-success">
+</form>
+<% if flash[:errors] %>
+	<% flash[:errors].each do |e| %>
+	<div><%= e %><div>
+	<%end%>
+<%end%>
